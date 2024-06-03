@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+# 리소스 유형: Service, Deployment
+kind: Deployment
+# Deplolyment의 메타데이터: 이름 등
+metadata:
+  name: frontend-server
+  namespace: ai-conductor
+# 세부 스펙 정의
+spec:
+  # 생성할 Pod 복제본 수
+  replicas: 2
+  # Deployment가 관리하는 Pod를 선택하기 위한 라벨 셀럭터를 정의
+  selector:
+    matchLabels:
+      app: frontend-server
+  # 생성될 Pod의 템플릿 정의
+  template:
+    # Pod의 메타데이터: 라벨 등
+    metadata:
+      labels:
+        app: frontend-server
+        app.kubernetes.io/name: frontend-server
+    # Pod 스펙 정의
+    spec:
+      # Pod에 포함될 컨테이너 정의
+      containers:
+        # 컨테이너 이름
+        - name: frontend-server-container
+          # 컨테이너에 사용할 이미지
+          image: ai-conductor-image-url
+          imagePullPolicy: Always
+          # 컨테이너에서 열고자 하는 포트
+          ports:
+            - name: aic-fe-http
+              containerPort: 80
+              protocol: TCP
+
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+      nodeSelector:
+        aic-role: controller
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app.kubernetes.io/name: frontend-server
+

@@ -1,0 +1,23 @@
+# Kubernetes API 버전
+apiVersion: v1
+# 리소스 유형: Service, Deployment
+kind: Service
+# Service의 메타데이터: 이름 등
+metadata:
+  labels:
+    app: frontend-service
+  name: frontend-service
+  namespace: ai-conductor
+spec:
+  selector:
+    app: frontend-server
+    app.kubernetes.io/name: frontend-server
+  ports:
+    - name: http
+      nodePort: 30020
+      port: 80
+      protocol: TCP
+      targetPort: aic-fe-http
+  # Service 유형: LoadBalancer, NodePort, ClusterIP
+  type: NodePort
+
