@@ -10,6 +10,18 @@ AI Conductor allows users to leverage verified AI Solutions from LG Electronics 
 
 Additionally, AI Conductor uses a scalable Kubernetes-based model training infrastructure to efficiently train AI Models and supply them to Edge Conductor. By supplying AI Solutions to Edge AIOps, AI Conductor will lead the democratization and innovation of AI technology.
 
+## Key Features
+
+AI Conductor provides the following high-level features:
+
+#### AI Solution
+
+AI Solutions, incorporating proven analytical expertise and AI/ML technology from real industrial settings, are provided.
+
+#### Instance
+
+An Instance is a computing resource that handles tasks such as AI Model training and traffic balancing based on configured Model training execution environment information.
+
 # User Guide
 - [AI Solution](https://mellerikat.com/user_guide/data_scientist_guide/ai_conductor/ai_solution)
 - [Instance](https://mellerikat.com/user_guide/data_scientist_guide/ai_conductor/instance)
