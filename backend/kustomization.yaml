@@ -11,17 +11,10 @@ configMapGenerator:
       disableNameSuffixHash: true
     envs:
       - ./params/redis.env
-#secretGenerator:
-#  - name: ldap-secret
-#    namespace: ai-conductor
-#    options:
-#      disablenamesuffixhash: true
-#    files:
-#      - ./params/lge_root_ca.crt
 images:
   - name: ai-conductor-image-url
-    newName: 
-    newTag: 
+    newName:
+    newTag:
 replicas:
   - name: ai-conductor-web
     count: 4

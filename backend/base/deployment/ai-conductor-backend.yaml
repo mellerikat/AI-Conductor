@@ -15,10 +15,6 @@ spec:
         app: ai-conductor
         app.kubernetes.io/name: ai-conductor-web
     spec:
-#      volumes:
-#        - name: aic-volume
-#          secret:
-#            secretName: ldap-secret
       containers:
         - name: web-backend
           image: ai-conductor-image-url
@@ -35,10 +31,6 @@ spec:
             httpGet:
               path: /api/v1/healthz
               port: 80
-#          volumeMounts:
-#            - name: aic-volume
-#              readOnly: true
-#              mountPath: "/etc/aic"
           env:
             - name: AIC_IS_PRODUCT_ENV
               value: "1"
