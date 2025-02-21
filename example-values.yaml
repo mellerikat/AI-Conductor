@@ -1,0 +1,29 @@
+infra_name: infraname
+deploy_env: prod
+redis:
+  host: "master.redis-an2-aidx-deployenv-infraname.abcdef.apn2.cache.amazonaws.com"
+  port: "6379"
+rds_secretmanager: "/parameter/ap-northeast-2/infraname/deployenv/rds"
+webserver:
+  images:
+    name: 339713051385.dkr.ecr.ap-northeast-2.amazonaws.com/mellerikat/release/ai-conductor/aic-webserver
+    tag: "2.1.0"
+  config:
+    general:
+      ecr_base_path: "123456789012.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-repo-an2-infraname-deployenv/"
+      mysql_db: "ai_conductor"
+    ldap:
+      enabled: "false"
+    monitor:
+      type: "grafana"
+
+    mlops:
+      engine: "sagemaker"
+      sagemaker:
+        role_arn: "arn:aws:iam::123546789012:role/role-eks-an2-ai-conductor-ai-conductor-sa"
+        train_tags: 'Cost Type:COMPUTING,Company:LGE'
+ 
+frontend:
+  images:
+    name: 339713051385.dkr.ecr.ap-northeast-2.amazonaws.com/mellerikat/release/ai-conductor/aic-frontend
+    tag: "2.1.0"
