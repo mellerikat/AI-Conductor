@@ -22,15 +22,14 @@ AI Solutions, incorporating proven analytical expertise and AI/ML technology fro
 
 An Instance is a computing resource that handles tasks such as AI Model training and traffic balancing based on configured Model training execution environment information.
 
-## Installation
+## prerequisite
 > **Note**  
-> You can skip `secrets-store-csi-driver` and `aws-secrets-manager` if they are already installed.
+> You can skip this step if `secrets-store-csi-driver` and `aws-secrets-manager` are already installed
 
-Add the required repositories (total of 3).
+Add the required repositories.
 ```bash
 helm repo add secrets-store-csi-driver https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
 helm repo add aws-secrets-manager https://aws.github.io/secrets-store-csi-driver-provider-aws
-helm repo add mellerikat-aicond https://mellerikat.github.io/AI-Conductor
 ```
 
 Verify that the repositories have been added correctly.
@@ -40,14 +39,31 @@ helm repo ls
 NAME                            URL
 secrets-store-csi-driver        https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
 aws-secrets-manager             https://aws.github.io/secrets-store-csi-driver-provider-aws
+```
+
+Install the required applications.
+```bash
+helm install csi-secrets-store secrets-store-csi-driver/secrets-store-csi-driver --version 1.3.2
+helm install secrets-provider-aws aws-secrets-manager/secrets-store-csi-driver-provider-aws -n kube-system
+```
+
+## installation
+
+Add the required repositories.
+```bash
+helm repo add mellerikat-aicond https://mellerikat.github.io/AI-Conductor
+```
+Verify that the repositories have been added correctly.
+```bash
+helm repo ls
+
+NAME                            URL
 mellerikat-aicond               https://mellerikat.github.io/AI-Conductor
 ```
 Create a `values-file.yaml` file tailored to your environment by referring to `example-values.yaml`.
 
-Install the required applications (total of 3).
+Install AI Conductor.
 ```bash
-helm install csi-secrets-store secrets-store-csi-driver/secrets-store-csi-driver --version 1.3.2
-helm install secrets-provider-aws aws-secrets-manager/secrets-store-csi-driver-provider-aws -n kube-system
 helm install ai-conductor mellerikat-aicond/ai-conductor --values {values-file.yaml} -n ai-conductor
 ```
 
