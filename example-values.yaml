@@ -5,6 +5,7 @@ redis:
   port: "6379"
 rds_secretmanager: "/parameter/ap-northeast-2/infraname/deployenv/rds"
 webserver:
+  nodePort: 30033
   config:
     general:
       ecr_base_path: "123456789012.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-repo-an2-infraname-deployenv/"
@@ -18,3 +19,5 @@ webserver:
       sagemaker:
         role_arn: "arn:aws:iam::123546789012:role/role-eks-an2-ai-conductor-ai-conductor-sa"
         train_tags: 'Cost Type:COMPUTING,Company:LGE'
+frontend:
+  nodePort: 30022
