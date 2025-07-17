@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   ai-conductor:
   - apiVersion: v2
+    appVersion: 2.2.2
+    created: "2025-07-17T05:50:50.072385341Z"
+    description: A Helm chart for Kubernetes
+    digest: 5e97b1492ed76317f09b16a4f2d52b152652fb729e67d3319357bd856b11115f
+    name: ai-conductor
+    type: application
+    urls:
+    - https://mellerikat.github.io/AI-Conductor/ai-conductor-2.2.2.tgz
+    version: 2.2.2
+  - apiVersion: v2
     appVersion: 2.2.1
-    created: "2025-07-11T05:13:34.712394502Z"
+    created: "2025-07-17T05:50:50.071017342Z"
     description: A Helm chart for Kubernetes
     digest: b8270bba8c391dd859039730ee7dd530941438c5e01db6039ee531aa0038b5c5
     name: ai-conductor
@@ -13,7 +23,7 @@ entries:
     version: 2.2.1
   - apiVersion: v2
     appVersion: 2.2.0
-    created: "2025-07-11T05:13:34.711948716Z"
+    created: "2025-07-17T05:50:50.069659456Z"
     description: A Helm chart for Kubernetes
     digest: 98a1711aa98ce232050f492936cd3ef9cb9504fd4016065878da30396187735d
     name: ai-conductor
@@ -23,7 +33,7 @@ entries:
     version: 2.2.0
   - apiVersion: v2
     appVersion: 2.1.3
-    created: "2025-07-11T05:13:34.711500419Z"
+    created: "2025-07-17T05:50:50.068246895Z"
     description: A Helm chart for Kubernetes
     digest: 9e0e9fbbebbad0fb11e8f89152ba72b3def2d53632fb4a7b8443bcb5fe1fd16e
     name: ai-conductor
@@ -33,7 +43,7 @@ entries:
     version: 2.1.3
   - apiVersion: v2
     appVersion: 2.1.2
-    created: "2025-07-11T05:13:34.711112331Z"
+    created: "2025-07-17T05:50:50.067063356Z"
     description: A Helm chart for Kubernetes
     digest: 2f01b3db28f576a090669131f046ee582145d1765146bb440e93cc1788f6661e
     name: ai-conductor
@@ -43,7 +53,7 @@ entries:
     version: 2.1.2
   - apiVersion: v2
     appVersion: 2.1.1
-    created: "2025-07-11T05:13:34.710696407Z"
+    created: "2025-07-17T05:50:50.065738769Z"
     description: A Helm chart for Kubernetes
     digest: 4f64914119c0a4de494b53429c1edee91368a8f655cba578f42d70a4251119d5
     name: ai-conductor
@@ -53,7 +63,7 @@ entries:
     version: 2.1.1
   - apiVersion: v2
     appVersion: 2.1.0
-    created: "2025-07-11T05:13:34.710252866Z"
+    created: "2025-07-17T05:50:50.06322145Z"
     description: A Helm chart for Kubernetes
     digest: 71dffe3bb8381de6ae9a09914b25e66c9ce4e71af55f3e9a0ee84528da46e76f
     name: ai-conductor
@@ -61,4 +71,4 @@ entries:
     urls:
     - https://mellerikat.github.io/AI-Conductor/ai-conductor-2.1.0.tgz
     version: 2.1.0
-generated: "2025-07-11T05:13:34.709706944Z"
+generated: "2025-07-17T05:50:50.062586136Z"
